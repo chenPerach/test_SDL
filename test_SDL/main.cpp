@@ -4,7 +4,7 @@
 
 int main(int argc, char* args[])
 {
-	ScreenSettings settings = { "title",640,480,SDL_WINDOW_SHOWN };
+	ScreenSettings settings = { "title",1240,720,SDL_WINDOW_SHOWN };
 	Context g(settings);
 	g.run();
 	

@@ -32,8 +32,11 @@ void Context::init()
 	mSurface = shared_ptr<SDL_Surface>(SDL_GetWindowSurface(mWindow.get()),SDL_FreeSurface);
 	
 	string path = "assets/press_x.bmp";
-	SDL_Surface* img = SDL_LoadBMP(path.c_str());
-	SDL_BlitSurface(img,NULL,mSurface.get(),NULL);
+	SDL_Surface* surface = load_BMP_image(path);
+	surface = optimize_surface(surface, mSurface.get());
+
+	SDL_Rect scale_rect = { 0,0,screen_settings->WIDTH,screen_settings->HEIGHT };
+	SDL_BlitScaled(surface, NULL, mSurface.get(), &scale_rect);
 
 }
 

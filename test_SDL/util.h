@@ -2,6 +2,7 @@
 #include <string>
 #include <SDL.h>
 #include <iostream>
+#include <SDL_image.h>
 using namespace std;
 
 struct ScreenSettings {
@@ -20,4 +21,7 @@ enum KeyPressSurfaces
     KEY_PRESS_SURFACE_TOTAL
 };
 
-SDL_Surface* loadImage(const string& path);
+SDL_Surface* load_BMP_image(const string& path); 
+SDL_Surface* optimize_surface(SDL_Surface* surface, const SDL_Surface* window_surface);
+
+SDL_Surface* load_PNG_image(const string& path);
