@@ -10,3 +10,7 @@ void Loop::run() {
 		execute();
 	end();
 }
+
+inline bool Loop::isFinished() {
+	return is_finished;
+}

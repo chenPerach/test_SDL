@@ -1,7 +1,7 @@
 #pragma once
 #include <SDL.h>
 #include <iostream>
-#include "structs.h"
+#include "util.h"
 #include "Loop.h"
 using namespace std;
 

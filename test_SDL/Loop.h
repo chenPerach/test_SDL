@@ -12,9 +12,7 @@ protected:
 	bool is_finished;
 public:
 	Loop();
-	inline bool isFinished() {
-		return is_finished;
-	}
+	inline bool isFinished();
 	virtual void init() = 0;
 	virtual void execute() = 0;
 	virtual void end()=0;
