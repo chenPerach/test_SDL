@@ -3,11 +3,13 @@
 #include <iostream>
 #include "util.h"
 #include "Loop.h"
+#include "AssetManager.h"
 using namespace std;
 
 class Context : public Loop
 {
 private: 
+	AssetManager asset_manager;
 	shared_ptr<SDL_Window> mWindow;
 	shared_ptr<SDL_Surface> mSurface;
 	shared_ptr<ScreenSettings> screen_settings;

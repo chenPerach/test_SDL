@@ -10,7 +10,6 @@ Context::~Context()
 	mSurface.reset();
 	mWindow.reset();
 	SDL_Quit();
-
 }
 
 void Context::update_window_settings(const ScreenSettings& new_settings)
@@ -30,10 +29,9 @@ void Context::init()
 	mWindow = shared_ptr<SDL_Window>(SDL_CreateWindow(s->title.c_str(), SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, s->WIDTH, s->HEIGHT, s->screen_flag),SDL_DestroyWindow);
 	
 	mSurface = shared_ptr<SDL_Surface>(SDL_GetWindowSurface(mWindow.get()),SDL_FreeSurface);
-	
-	string path = "assets/press_x.bmp";
-	SDL_Surface* surface = load_BMP_image(path);
-	surface = optimize_surface(surface, mSurface.get());
+	asset_manager.config(mSurface->format);
+	string path = "assets/png_image.png";
+	SDL_Surface* surface = asset_manager.load_asset(path,true);
 
 	SDL_Rect scale_rect = { 0,0,screen_settings->WIDTH,screen_settings->HEIGHT };
 	SDL_BlitScaled(surface, NULL, mSurface.get(), &scale_rect);

@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AssetManager.cpp" />
     <ClCompile Include="Context.cpp" />
     <ClCompile Include="Loop.cpp" />
     <ClCompile Include="main.cpp" />
@@ -29,6 +30,7 @@
     <Image Include="assets\hello_world.bmp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AssetManager.h" />
     <ClInclude Include="Context.h" />
     <ClInclude Include="Loop.h" />
     <ClInclude Include="util.h" />

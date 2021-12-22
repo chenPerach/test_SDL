@@ -17,5 +17,5 @@ SDL_Surface* optimize_surface(SDL_Surface* surface,const SDL_Surface* window_sur
     return optimized;
 }
 SDL_Surface* load_PNG_image(const string& path) {
-    return NULL;
+    return NULL; 
 }
